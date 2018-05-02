@@ -1,15 +1,17 @@
+package project_fruits;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 
-public class Fruit {
+public class Fruit implements Serializable {
 
 	protected String fruitName;
 	protected String fruitColor;
-	
-	
+
 	public Fruit() {
-		}
+	}
 
 	public Fruit(String fruitName, String fruitColor) {
 		this.fruitName = fruitName;
@@ -43,20 +45,20 @@ public class Fruit {
 
 	}
 
+	void input(ObjectOutputStream objectOutputStream) throws IOException {
+
+		objectOutputStream.writeObject(this);
+
+	}
+
 	public void output() {
 		System.out.println("Fruit: " + getFruitName() + "; Color: " + getFruitColor() + ".");
 	}
 
-	
-	
 	@Override
 	public String toString() {
-		
+
 		return ("Fruit: " + this.fruitName + "; Color: " + this.fruitColor + ".");
 	}
-
-	
-
-	
 
 }

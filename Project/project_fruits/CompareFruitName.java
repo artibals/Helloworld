@@ -1,3 +1,4 @@
+package project_fruits;
 import java.util.Comparator;
 
 public class CompareFruitName implements Comparator<Fruit>{
